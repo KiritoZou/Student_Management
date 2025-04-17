@@ -1,0 +1,355 @@
+/* 主要变量定义 */
+:root {
+  --primary-color: #0047AB; /* 航空蓝 */
+  --secondary-color: #87CEEB; /* 天空蓝 */
+  --accent-color: #1E90FF; /* 道奇蓝 */
+  --light-color: #F0F8FF; /* 爱丽丝蓝 */
+  --dark-color: #1A365D; /* 深蓝色 */
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --gray-100: #f8f9fa;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+  --font-family: 'Microsoft YaHei', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  --transition-speed: 0.3s;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 全局样式 */
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: transparent;
+}
+
+/* 将背景图片设置到伪元素，允许内容在上层 */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/campus-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  opacity: 0.3; /* 设置透明度 */
+  z-index: -1;
+}
+
+/* 添加一个半透明的蓝色渐变层 */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(30, 144, 255, 0.3), rgba(135, 206, 235, 0.3));
+  z-index: -1;
+}
+
+/* 主容器 */
+.main-container {
+  flex: 1;
+  display: flex;
+  min-height: calc(100vh - 60px);
+}
+
+/* 侧边栏 */
+.sidebar {
+  width: 250px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-right: 1px solid var(--gray-300);
+  padding: 20px 0;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: all var(--transition-speed);
+  z-index: 100;
+}
+
+.sidebar-collapsed {
+  width: 60px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+.sidebar-logo {
+  height: 40px;
+}
+
+.sidebar-title {
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-color);
+  transition: opacity var(--transition-speed);
+}
+
+.sidebar-collapsed .sidebar-title {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.nav-item {
+  margin-bottom: 5px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  color: var(--gray-700);
+  text-decoration: none;
+  border-radius: 0;
+  transition: all var(--transition-speed);
+}
+
+.nav-link:hover {
+  background-color: var(--light-color);
+  color: var(--primary-color);
+}
+
+.nav-link.active {
+  background-color: var(--light-color);
+  color: var(--primary-color);
+  border-left: 3px solid var(--primary-color);
+}
+
+.nav-icon {
+  margin-right: 10px;
+  font-size: 18px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.nav-text {
+  transition: opacity var(--transition-speed);
+}
+
+.sidebar-collapsed .nav-text {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* 内容区域 */
+.content {
+  flex: 1;
+  padding: 20px;
+  background-color: rgba(248, 249, 250, 0.7);
+  transition: all var(--transition-speed);
+}
+
+/* 页头 */
+.content-header {
+  margin-bottom: 25px;
+}
+
+.content-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--dark-color);
+  margin-bottom: 5px;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  padding: 8px 0;
+}
+
+/* 卡片样式 */
+.card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 20px;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  background-color: transparent;
+  border-bottom: 1px solid var(--gray-300);
+  padding: 15px 20px;
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* 表格样式 */
+.table {
+  color: var(--gray-700);
+}
+
+.table thead th {
+  background-color: rgba(240, 248, 255, 0.6);
+  color: var(--dark-color);
+  font-weight: 600;
+  border-bottom: 2px solid var(--gray-300);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(30, 144, 255, 0.1);
+}
+
+/* 按钮样式 */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: #003d99;
+  border-color: #003d99;
+}
+
+.btn-action {
+  padding: 5px 10px;
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+/* 状态标签 */
+.status-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.status-active {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: var(--success-color);
+}
+
+.status-inactive {
+  background-color: rgba(108, 117, 125, 0.2);
+  color: var(--gray-600);
+}
+
+.status-warning {
+  background-color: rgba(255, 193, 7, 0.2);
+  color: var(--warning-color);
+}
+
+.status-danger {
+  background-color: rgba(220, 53, 69, 0.2);
+  color: var(--danger-color);
+}
+
+/* 分页 */
+.pagination {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.page-link {
+  color: var(--primary-color);
+  border: 1px solid var(--gray-300);
+}
+
+.page-item.active .page-link {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* 表单控件 */
+.form-control {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--gray-300);
+  padding: 10px 15px;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(0, 71, 171, 0.25);
+}
+
+.form-label {
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--gray-700);
+}
+
+/* 搜索表单 */
+.search-form {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 20px;
+}
+
+/* 响应式调整 */
+@media (max-width: 991.98px) {
+  .sidebar {
+    width: 60px;
+  }
+  
+  .sidebar .sidebar-title, 
+  .sidebar .nav-text {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  
+  .content {
+    margin-left: 60px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .main-container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid var(--gray-300);
+    padding: 10px 0;
+  }
+  
+  .sidebar .sidebar-title,
+  .sidebar .nav-text {
+    opacity: 1;
+    width: auto;
+    height: auto;
+  }
+  
+  .content {
+    margin-left: 0;
+  }
+} 

@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('/static/images/campus-background.jpg') no-repeat center center fixed !important;
+    background-size: cover !important;
+    background-position: center !important;
+    font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+.login-container {
+    max-width: 400px;
+    width: 90%;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    transform: translateY(0);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+.login-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.login-container h2 {
+    text-align: center;
+    color: #1a2a3a;
+    margin-bottom: 30px;
+    font-size: 36px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.login-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #1E90FF, #4169E1);
+    border-radius: 3px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #444;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 15px;
+    border: 2px solid rgba(225, 225, 225, 0.8);
+    border-radius: 12px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.form-group input:focus {
+    border-color: #1E90FF;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.2);
+}
+
+.form-group button {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #1E90FF, #4169E1);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-group button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.5s ease;
+}
+
+.form-group button:hover::before {
+    left: 100%;
+}
+
+.form-group button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(30, 144, 255, 0.3);
+}
+
+.form-group a {
+    color: #555555;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    transition: color 0.3s ease;
+}
+
+.form-group a:hover {
+    color: #333333;
+    text-decoration: underline;
+}
+
+.error-message {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #ff3333;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+
+/* 添加关键样式保护 */
+.user-avatar-img[data-protected="true"] {
+    pointer-events: none !important;
+    user-select: none !important;
+    -webkit-user-drag: none !important;
+    -webkit-touch-callout: none !important;
+}
+
+/* 添加水印保护 */
+.user-avatar-img[data-protected="true"]::after {
+    content: '受保护图片';
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 8px;
+    color: rgba(255,255,255,0.7);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    pointer-events: none;
+}

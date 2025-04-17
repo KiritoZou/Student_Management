@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Server port="8005" shutdown="SHUTDOWN">
+  <Service name="Catalina">
+    <Connector connectionTimeout="20000" port="8080" protocol="HTTP/1.1"/>
+    <Engine defaultHost="localhost" name="Catalina">
+      <Host appBase="webapps" autoDeploy="true" name="localhost" unpackWARs="true">
+        <Context path="/my-web-app" docBase="E:/my-web-app/target/my-web-app" reloadable="true"/>
+      </Host>
+    </Engine>
+  </Service>
+</Server>
