@@ -8,10 +8,10 @@
 
 
 效果如下：
-![image]src\main\webapp\static\images\11.png
-![image]src\main\webapp\static\images\11.png
-![image]src\main\webapp\static\images\11.png
-![image]src\main\webapp\static\images\11.png
+![image](src/main/webapp/static/images/11.png)
+![image](src/main/webapp/static/images/22.png)
+![image](src/main/webapp/static/images/33.png)
+![image](src/main/webapp/static/images/44.png)
 
 
 ## 系统运行说明
