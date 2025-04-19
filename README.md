@@ -2,9 +2,13 @@
 
 在 `src/main/webapp/static/images` 目录下有以下截图文件（迭代历史）：
 - src\main\webapp\static\images\11.png
+![image]https://github.com/KiritoZou/Student_Management/blob/main/src/main/webapp/static/images/11.png
 - src\main\webapp\static\images\22.png
+![image]https://github.com/KiritoZou/Student_Management/blob/main/src/main/webapp/static/images/22.png
 - src\main\webapp\static\images\33.png
+![image]https://github.com/KiritoZou/Student_Management/blob/main/src/main/webapp/static/images/33.png
 - src\main\webapp\static\images\44.png
+![image]https://github.com/KiritoZou/Student_Management/blob/main/src/main/webapp/static/images/44.png
 
 
 ## 系统运行说明
