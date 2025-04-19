@@ -8,13 +8,10 @@
 
 
 效果如下：
-![image]https://github.com/KiritoZou/Student_Management/blob/main/src/main/webapp/static/images/11.png
-
-![image]https://github.com/KiritoZou/Student_Management/blob/main/src/main/webapp/static/images/22.png
-
-![image]https://github.com/KiritoZou/Student_Management/blob/main/src/main/webapp/static/images/33.png
-
-![image]https://github.com/KiritoZou/Student_Management/blob/main/src/main/webapp/static/images/44.png
+![image]src\main\webapp\static\images\11.png
+![image]src\main\webapp\static\images\11.png
+![image]src\main\webapp\static\images\11.png
+![image]src\main\webapp\static\images\11.png
 
 
 ## 系统运行说明
